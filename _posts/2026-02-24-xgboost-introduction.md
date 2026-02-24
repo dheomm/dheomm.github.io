@@ -12,6 +12,7 @@ XGBoost(eXtreme Gradient Boosting)는 **그래디언트 부스팅** 알고리즘
 ## 핵심 개념
 
 ### 1. 앙상블 학습
+
 여러 개의 약한 모델(weak learner)을 결합해 강한 모델을 만드는 방식입니다.
 
 ### 2. 부스팅(Boosting)
@@ -36,6 +37,7 @@ pip install xgboost
 ```
 
 ## 간단한 예제
+
 붓꽃(Iris) 데이터로 분류 모델을 만들어봅니다.
 ```python
 import xgboost as xgb
@@ -65,9 +67,12 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"정확도: {accuracy:.4f}")
+```
 
 ## 주요 하이퍼파라미터
+
 | 파라미터 | 설명 | 기본값 |
+|----------|------|--------|
 | 'n_estimators' | 트리 개수 | 100 |
 | 'max_depth' | 트리 최대 깊이 | 6 |
 | 'learning_rate' | 학습률(낮을수록 천천히 학습) | 0.3 |
@@ -75,36 +80,10 @@ print(f"정확도: {accuracy:.4f}")
 | 'colsample_bytree' | 각 트리에 사용할 피처 비율 | 1 |
 
 ## 마무리
+
 XGBoost는 정형 데이터에서 뛰어난 성능을 보여주는 강력한 알고리즘입니다. 다음 글에서는 하이퍼파라미터 튜닝과 Feature Importance 해석 방법을 알아보겠습니다.
 
 ## 참고 자료
+
 - [XGBoost 공식 문서](https://xgboost.readthedocs.io/)
 - [XGBoost 논문](https://arxiv.org/abs/1603.02754)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
