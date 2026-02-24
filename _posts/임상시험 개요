@@ -1,0 +1,86 @@
+---
+title: 임상시험 개요
+date: 2026-02-24 
+categories: [임상시험, 개요]
+tags: [SDTM, ADaM, CDISC, 임상데이터]
+---
+
+## 임상시험이란?
+
+임상시험(Clinical Trial)은 새로운 의약품이나 치료법의 **안전성**과 **유효성**을 사람을 대상으로 검증하는 연구입니다.
+
+## 임상시험 단계
+
+| 단계 | 목적 | 대상 | 기간 |
+|------|------|------|------|
+| Phase 1 | 안전성, 용량 결정 | 건강한 지원자 20-100명 | 수개월 |
+| Phase 2 | 유효성, 부작용 | 환자 100-300명 | 수개월~2년 |
+| Phase 3 | 대규모 유효성 검증 | 환자 1,000-3,000명 | 1-4년 |
+| Phase 4 | 시판 후 조사 | 실제 환자 | 지속적 |
+
+
+
+
+
+## 임상 데이터의 흐름
+
+```
+환자 -> CRF 작성 -> EDC 시스템 -> 데이터 정제 -> SDTM -> ADaM -> 통계분석 -> 보고서
+```
+
+### EDC (Electronic Data Capture)
+
+전자 데이터 수집 시스템으로, 종이 CRF를 대체합니다.
+
+- 실시간 데이터 입력 및 검증
+- Query 관리
+- Audit Trail (변경 이력 추적)
+
+대표적인 EDC 시스템: Medidata Rave, Oracle InForm, crsCube 등
+
+## CDISC 표준
+
+CDISC(Clinical Data Interchange Standards Consortium)는 임상 데이터의 국제 표준입니다. FDA, PMDA 등 규제기관 제출 시 필수입니다.
+
+### SDTM (Study Data Tabulation Model)
+
+수집된 원시 데이터를 **표준화된 형식**으로 변환한 것입니다.
+
+주요 도메인:
+
+| 도메인 | 설명 | 예시 변수 |
+|--------|------|-----------|
+| DM | 인구통계 | AGE, SEX, RACE |
+| VS | 활력징후 | VSORRES, VSORRESU |
+| LB | 검사 결과 | LBORRES, LBORRESU |
+| AE | 이상반응 | AETERM, AESEV |
+| CM | 병용약물 | CMTRT, CMDOSE |
+
+### ADaM (Analysis Data Model)
+
+SDTM을 기반으로 **통계 분석용**으로 가공한 데이터입니다.
+
+주요 데이터셋:
+
+| 데이터셋 | 설명 |
+|----------|------|
+| ADSL | Subject-Level 분석 데이터 |
+| ADAE | 이상반응 분석 데이터 |
+| ADLB | 검사 결과 분석 데이터 |
+| ADEFF | 유효성 분석 데이터 |
+
+## 데이터 분석가의 역할
+
+1. **데이터 매핑**: Raw -> SDTM -> ADaM 변환
+2. **데이터 검증**: Edit Check, 이상치 탐지
+3. **통계 분석**: 유효성/안전성 분석 수행
+4. **시각화**: 결과 리포트 및 대시보드 작성
+
+## 마무리
+
+임상 데이터 분석은 신약 개발의 핵심 과정입니다. 다음 글에서는 SDTM 도메인별 구조와 매핑 방법을 자세히 다뤄보겠습니다.
+
+## 참고 자료
+
+- [CDISC 공식 사이트](https://www.cdisc.org/)
+- [FDA Study Data Standards](https://www.fda.gov/industry/fda-data-standards-advisory-board/study-data-standards-resources)
